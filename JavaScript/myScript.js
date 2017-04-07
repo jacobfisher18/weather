@@ -6,7 +6,7 @@ function dayOfWeekAsString(dayIndex) {
 }
 
 function displayWeatherIn(city) {
-	var url = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&APPID=4add38453c704df46ec2b390f9e132fd";
+	var url = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&APPID=4add38453c704df46ec2b390f9e132fd";
 	$.getJSON(url, function(data) {
 		var temp = data.main.temp;
 		$('.today').text(temp + "°F");
@@ -14,7 +14,7 @@ function displayWeatherIn(city) {
 }
 
 function displayForecastIn(city) {
-	var url = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&APPID=4add38453c704df46ec2b390f9e132fd";
+	var url = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&APPID=4add38453c704df46ec2b390f9e132fd";
 	$.getJSON(url, function(data) {
 		$('.forecast1').text("Tomorrow : " + data.list[1].main.temp); date.setDate(date.getDate() + 1);
 		$('.forecast2').text(dayOfWeekAsString(date.getDay()) + ": " + data.list[2].main.temp); date.setDate(date.getDate() + 1);
